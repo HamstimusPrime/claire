@@ -1,6 +1,6 @@
 # Claire
 
-Claire is a Python-based AI agent that automatically fixes and debugs code using Google's Gemini API. This project demonstrates how modern AI development tools like Cursor and Claude Code work under the hood.
+Claire is a Python-based AI agent that automatically fixes and debugs code using Google's Gemini API. This project explores and in turn demonstrates how modern AI development tools like Cursor and Claude Code might work under the hood.
 
 ## What It Does
 Claire acts as an intelligent coding assistant that can:
