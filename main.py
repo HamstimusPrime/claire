@@ -28,15 +28,8 @@ except Exception as e:
     print("request to model failed, error: ", e)
     sys.exit(1)
     
-
-
-
-prompt_token = response.usage_metadata.prompt_token_count
-response_token = response.usage_metadata.candidates_token_count
-
-#check if the --verbose flag was passed by the user
-# if len(command_args) == 3:
-#     (print(f'User prompt: {user_prompt}\nGemini: {response.text}\nPrompt tokens: {prompt_token}\nResponse tokens: {response_token}'), None)[command_args[2] == "--verbose"]
+prompt_token = response.usage_metadata.prompt_token_count #type: ignore
+response_token = response.usage_metadata.candidates_token_count #type: ignore
 
 if len(command_args) == 3:
     if command_args[2] == "--verbose":
