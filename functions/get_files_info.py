@@ -9,11 +9,11 @@ def get_files_info(working_directory, directory:  str = None): #type: ignore
     abs_path_working_dir = os.path.abspath(working_directory)
     dst_dir = os.path.abspath(os.path.join(working_directory, directory))
     
-    #check if path is a valid path
+    #check if joined path is a valid path
     if os.path.isdir(dst_dir) == False:
         return f'Error: "{directory}" is not a directory'
         
-    #check if directory is outside the bounds of working director
+    #check if directory is outside the bounds of working directory
     if dst_dir.startswith(abs_path_working_dir) == False:
         return f'Error: Cannot list "{directory}" as it is outside the permitted working directory'
     
