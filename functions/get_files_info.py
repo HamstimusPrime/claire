@@ -54,8 +54,56 @@ schema_get_files_info =  types.FunctionDeclaration(
 )
 
 
+schema_get_file_content = types.FunctionDeclaration(
+    name="get_file_content",
+    description="Reads the content of a specified file, constrained to the working directory.",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "file_path": types.Schema(
+                type=types.Type.STRING,
+                description="The relative file-path to the file to be read.",
+            ),
+        },
+    ),
+)
+
+schema_run_python_file = types.FunctionDeclaration(
+    name="run_python_file",
+    description="Execute Python files with optional arguments.",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "file_path": types.Schema(
+                type=types.Type.STRING,
+                description="The relative file-path to the python program to be executed.",
+            ),
+        },
+    ),
+)
+schema_write_file = types.FunctionDeclaration(
+    name="write_file",
+    description="Write text to file in the file-path provided.",
+    parameters=types.Schema(
+        type=types.Type.OBJECT,
+        properties={
+            "file_path": types.Schema(
+                type=types.Type.STRING,
+                description="The relative file-path of the file to be written.",
+            ),
+            "content": types.Schema(
+                type=types.Type.STRING,
+                description="The relative file-path of the file to be written.",
+            ),
+        },
+    ),
+)
+
+
+
+
 available_functions = types.Tool(
     function_declarations=[
-        schema_get_files_info,
+        schema_get_files_info, schema_get_file_content, schema_run_python_file, schema_write_file
     ]
 )
