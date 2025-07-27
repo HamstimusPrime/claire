@@ -9,7 +9,7 @@ from functions.write_file import write_file
 
 def call_function(function_call_part: types.FunctionCall, verbose=False):
     if not verbose:
-        print(f"Calling function: {function_call_part.name}({function_call_part.args})")
+        print(f"Calling function: {function_call_part.name}({function_call_part.args if function_call_part.args else "no args"})")
     else:
         print(f" - Calling function: {function_call_part.name}")
     
